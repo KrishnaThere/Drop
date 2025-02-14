@@ -1,0 +1,218 @@
+body{
+    background-color: #005511;
+    font-family: 'Courier New', Courier, monospace;
+    color:#30e0ff;
+    }
+    
+    .drop-container {
+        text-decoration: none; /* Remove default link styling */
+        color: inherit; /* Keep text color the same */
+        display: inline-block;
+    }
+    
+    .drop {
+        width: 50px;
+        position: fixed;
+        top: 4vh;
+        right: 2vw;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 0.9em;
+        cursor: pointer;
+    }
+    
+    .default span {
+        display: block;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .default span:first-child {
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .default span:nth-child(2) {
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .default span:nth-child(3) {
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .default span:nth-child(4) {
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    .hover span {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hover span:first-child {
+        text-align: left;
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .hover span:nth-child(2) {
+        text-align: right;
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .hover span:nth-child(3) {
+        text-align: left;
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .hover span:nth-child(4) {
+        text-align: right;
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    
+    .drop-container:hover .default span {
+        opacity: 0;
+    }
+    .drop-container:hover .hover span {
+        opacity: 1;
+    }
+    
+    
+    .chapters{
+        display:flex;
+        flex-direction:column;
+        margin:10vh;
+        height:70vh;
+    }
+
+    .chaptername{
+        display:flex;
+        flex-direction: row;
+        border-bottom: #30e0ff 4px;
+    }
+
+    .number{
+        padding-right: 10vw;
+     }
+     .number h1{
+        font-size:4rem;
+        color:#30e0ff;
+        line-height: 1rem;
+     }
+     .number h1 a{
+        color:#30e0ff;
+        text-decoration: none;
+     }
+
+     .name h1{
+        font-size:4rem;
+        color:#30e0ff;
+        line-height: 1rem;
+     }
+     .name h1 a{
+        color:#30e0ff;
+        text-decoration: none;
+     }
+    
+    
+    .citation{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width:90vw;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .citation p{
+        
+        font-size: 1.5rem;
+        font-weight:20;
+    }
+    
+    .citation a{
+        color:#30e0ff;
+        text-decoration: none;
+    }
+    .citation a:hover{
+        text-decoration: underline;
+    }
+    
+    .cursor{
+        position:fixed;
+        width:300px;
+        height:300px;
+        border-radius: 50%;
+        background-color: #30e0ff;
+        transition:0.1s;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+        mix-blend-mode:difference;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+     
+        
+    }
+    
+    @media screen and (max-width: 768px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        
+    }
+    
+    @media screen and (max-width: 480px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+    
+        .citation p{
+        
+            font-size: 1.1rem;
+            font-weight:20;
+        }
+        
+        
+    }
+    
+    /* .page:hover~ .cursor{
+    transform:scale(6);
+    } */
