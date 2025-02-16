@@ -1,0 +1,349 @@
+body{
+    background-color: #005511;
+    font-family: 'Courier New', Courier, monospace;
+    color:#30e0ff;
+    }
+
+    .previous{
+       
+        
+        position: fixed;
+        left: 90px; /* Adjust this value to shift it towards the right */
+    }
+    
+    .previous p {
+        color:#30e0ff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    .drop-container {
+        text-decoration: none; /* Remove default link styling */
+        color: inherit; /* Keep text color the same */
+        display: inline-block;
+    }
+    
+    .drop {
+        width: 50px;
+        position: fixed;
+        top: 4vh;
+        right: 2vw;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 0.9em;
+        cursor: pointer;
+    }
+    
+    .default span {
+        display: block;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .default span:first-child {
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .default span:nth-child(2) {
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .default span:nth-child(3) {
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .default span:nth-child(4) {
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    .hover span {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hover span:first-child {
+        text-align: left;
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .hover span:nth-child(2) {
+        text-align: right;
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .hover span:nth-child(3) {
+        text-align: left;
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .hover span:nth-child(4) {
+        text-align: right;
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    
+    .drop-container:hover .default span {
+        opacity: 0;
+    }
+    .drop-container:hover .hover span {
+        opacity: 1;
+    }
+    
+    
+    
+    
+    .quote {
+        padding-top: 20vh;
+        width: 60vw;
+        margin: auto;
+        height: 80vh; /* Fix height to prevent collapsing */
+        overflow: hidden; /* Ensures layout stability */
+    }
+    
+    .quote h1 {
+        font-size: 5.5rem;
+        font-weight: 700;
+        line-height: 1.3em;
+        transition: 1.5s ease;
+        white-space: nowrap; /* Prevents unexpected line breaks */
+    }
+    
+    @keyframes floatO {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-35px);
+        }
+    }
+    
+    .quote h1 span {
+        display: inline-block;
+        animation: floatO 10s linear infinite;
+    }
+
+    .next {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #30e0ff;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 25vh; /* Position at bottom instead of relative */
+        left: 80vw;
+    }
+    
+    .next p {
+        color: #005511;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    
+    .citation{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width:90vw;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .citation p{
+        
+        font-size: 1.5rem;
+        font-weight:700;
+    }
+    
+    .citation a{
+        color:#30e0ff;
+        text-decoration: none;
+    }
+    .citation a:hover{
+        text-decoration: underline;
+    }
+    
+    
+    .page:hover~ .cursor{
+    transform:scale(6);
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+
+    
+        
+    }
+    
+    @media screen and (max-width: 768px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+            color:#30e0ff;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .quote {
+            padding-top: 20vh;
+            width: 75vw;
+            margin: auto;
+            height: 80vh; /* Fix height to prevent collapsing */
+            overflow: hidden; /* Ensures layout stability */
+        }
+
+    
+    
+        
+        .quote h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.3em;
+            transition: 5s ease;
+            white-space: nowrap;
+            animation: hoverEffect 6s ease-in-out infinite;
+        }
+        
+       
+    
+        .next {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: #30e0ff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 25vh; /* Position at bottom instead of relative */
+            left: 80vw;
+        }
+        
+        .next p {
+            color: #005511;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+    }
+    
+    @media screen and (max-width: 480px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+            color:#30e0ff;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .citation p{
+        
+            font-size: 1.1rem;
+            font-weight:20;
+        }
+        
+
+        .quote {
+            padding-top: 20vh;
+            width: 75vw;
+            margin: auto;
+            height: 80vh; /* Fix height to prevent collapsing */
+            overflow: hidden; /* Ensures layout stability */
+        }
+
+    
+        
+        .quote h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3em;
+            transition: 5s ease;
+            white-space: nowrap;
+            animation: hoverEffect 6s ease-in-out infinite;
+        }
+        
+        
+        
+    
+        .next {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            background-color: #30e0ff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 25vh; /* Position at bottom instead of relative */
+            left: 80vw;
+        }
+        
+        .next p {
+            color: #005511;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+    }
