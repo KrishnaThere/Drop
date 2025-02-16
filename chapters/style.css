@@ -84,38 +84,46 @@ body{
     .chapters{
         display:flex;
         flex-direction:column;
+       
         margin:10vh;
-        height:70vh;
+        margin-top: 30vh;
+        height:60vh;
     }
 
     .chaptername{
         display:flex;
         flex-direction: row;
-        border-bottom: #30e0ff 4px;
+        border-bottom: 4px dotted #30e0ff; 
+       
     }
 
     .number{
         padding-right: 10vw;
      }
      .number h1{
-        font-size:4rem;
+        font-size:3.5rem;
         color:#30e0ff;
         line-height: 1rem;
      }
-     .number h1 a{
+     .chaptername h1 a{
         color:#30e0ff;
         text-decoration: none;
+        font-weight: 100;
      }
 
+     .chaptername h1 a:hover{
+        color:#30e0ff;
+        text-decoration: none;
+        font-weight: bolder;
+     }
+
+
      .name h1{
-        font-size:4rem;
+        font-size:3.5rem;
         color:#30e0ff;
         line-height: 1rem;
      }
-     .name h1 a{
-        color:#30e0ff;
-        text-decoration: none;
-     }
+    
     
     
     .citation{
@@ -143,8 +151,8 @@ body{
     
     .cursor{
         position:fixed;
-        width:300px;
-        height:300px;
+        width:150px;
+        height:150px;
         border-radius: 50%;
         background-color: #30e0ff;
         transition:0.1s;
@@ -153,7 +161,8 @@ body{
         mix-blend-mode:difference;
     }
     
-    @media screen and (max-width: 1024px) {
+    
+    @media screen and (max-width: 1124px) {
         .drop {
             width: 50px;
             position: fixed;
@@ -165,7 +174,17 @@ body{
             cursor: pointer;
         }
     
-     
+        .name h1{
+            font-size:2.2rem;
+            color:#30e0ff;
+            line-height: 1rem;
+         }
+        
+         .number h1{
+            font-size:2.2rem;
+            color:#30e0ff;
+            line-height: 1rem;
+         }
         
     }
     
@@ -181,6 +200,17 @@ body{
             cursor: pointer;
         }
     
+        .name h1{
+            font-size:1.5rem;
+            color:#30e0ff;
+            line-height: 1.5rem;
+         }
+        
+         .number h1{
+            font-size:1.5rem;
+            color:#30e0ff;
+            line-height: 1.5rem;
+         }
         
         .citation p{
         
@@ -203,6 +233,41 @@ body{
             cursor: pointer;
         }
     
+        .chapters{
+            display:flex;
+            flex-direction:column;
+            margin:9vh;
+            height:70vh;
+        }
+    
+        .chaptername{
+            display:flex;
+            flex-direction: row;
+            border-bottom: 4px dotted #30e0ff; 
+           
+        }
+    
+        .number{
+            padding-right: 4vw;
+         }
+        
+         .name h1{
+            font-size:1.3rem;
+            color:#30e0ff;
+            line-height: 1.2rem;
+         }
+        
+         .number h1{
+            font-size:1.5rem;
+            color:#30e0ff;
+            line-height: 1.5rem;
+         }
+        
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
     
         .citation p{
         

@@ -131,8 +131,8 @@ color:#30e0ff;
 
 .cursor{
     position:fixed;
-    width:300px;
-    height:300px;
+    width:150px;
+    height:150px;
     border-radius: 50%;
     background-color: #30e0ff;
     transition:0.1s;

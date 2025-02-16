@@ -1,0 +1,909 @@
+body{
+    background-color: #30e0ff;
+    font-family: 'Courier New', Courier, monospace;
+    color:#005511;
+    }
+
+    .previous{
+        position: fixed;
+        left: 90px; /* Adjust this value to shift it towards the right */
+    }
+    
+    .previous p {
+        color:#005511;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    .drop-container {
+        text-decoration: none; /* Remove default link styling */
+        color: inherit; /* Keep text color the same */
+        display: inline-block;
+    }
+    
+    .drop {
+        width: 50px;
+        position: fixed;
+        top: 4vh;
+        right: 2vw;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 0.9em;
+        cursor: pointer;
+    }
+    
+    .default span {
+        display: block;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .default span:first-child {
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .default span:nth-child(2) {
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .default span:nth-child(3) {
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .default span:nth-child(4) {
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    .hover span {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hover span:first-child {
+        text-align: left;
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .hover span:nth-child(2) {
+        text-align: right;
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .hover span:nth-child(3) {
+        text-align: left;
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .hover span:nth-child(4) {
+        text-align: right;
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    
+    .drop-container:hover .default span {
+        opacity: 0;
+    }
+    .drop-container:hover .hover span {
+        opacity: 1;
+    }
+
+
+
+    .description{
+        width:60vw;
+        margin-left:10vw;
+        margin-top:20vh;
+        margin-bottom:20vh;
+    }
+
+    .description p{
+        font-size: 2.5rem;
+        font-weight:300;
+    }
+   
+
+    .description:hover ~ .question{
+        opacity: 0;
+    }
+
+    .description:hover ~ .other{
+        opacity: 0;
+    }
+
+    .description:hover ~ .letter-container{
+        opacity: 100;
+    }
+
+    .description p:hover span {
+        font-weight: 900;
+    }
+
+    .description p:hover .fluffy{
+        letter-spacing: 1.5rem;
+    }
+
+    .description p:hover .cling{
+        letter-spacing: -0.3rem;
+    }
+
+    .question{
+        width:70vw;
+       margin-left:20vw;
+       margin-bottom: 40vh;
+       margin-top: 30vh;
+    }
+
+    body:has(.question:hover) {
+        background-color: #005511;
+    }
+    
+    .question:hover{
+       color: #30e0ff;
+     }
+     
+    
+    .question h1{
+        font-size: 3rem;
+        font-weight:700;
+        line-height: 1.1em;
+        text-align: right;
+    }
+
+    .difference{
+      
+        width:80vw;
+        display:flex;
+        flex-direction: row;
+        margin:auto;
+        justify-content: space-around;
+        margin-bottom:10vh;
+    }
+
+    .injar{
+        width:40vw;
+        border-right: 2px solid #005511; 
+        height:30vh;
+    }
+
+    .injar, .outjar {
+        width: 40vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers items horizontally */
+        justify-content: center; /* Centers items vertically */
+        text-align: center; /* Ensures text inside is centered */
+    }
+
+    .display, .hidden {
+    width: 80%; /* Adjust width as needed */
+    max-width: 30vw; /* Ensures it doesn't stretch too much */
+}
+
+    .display{
+        font-size: 1.7rem;
+    }
+
+    .hidden{
+        font-size:0.5rem;
+        opacity:0;
+    }
+
+    .injar:hover .display {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    
+    .injar:hover .hidden {
+        font-size: 1.5rem;
+        opacity: 1;
+    }
+    
+    .outjar:hover .display {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    
+    .outjar:hover .hidden {
+        font-size: 1.5rem;
+        opacity: 1;
+    }
+    
+
+
+    .container{
+        margin-top:20vh;
+        margin:auto;
+        display:flex;
+        justify-content: center;
+        margin-bottom: 30vh;
+    }
+
+    .other{
+        margin-top: 100px;
+        width:45vw;
+        align-self: center;
+    }
+    
+    .other p{
+        font-size: 2.5rem;
+        font-weight:100;
+        text-align: center;
+    }
+
+    .quotes1 {
+        opacity: 0;
+        display:hidden;
+        font-family:cursive;
+        align-self: flex-start;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    .quotes1 span{
+        opacity:0;
+    }
+
+    .quotes2 span{
+        opacity:0;
+    }
+
+    .quotes2 {
+        opacity: 0;
+        font-family:cursive;
+        align-self: flex-start;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+
+    .container:hover ~ .question{
+        opacity: 0;
+    }
+
+    .container:hover ~ .difference{
+        opacity: 0;
+    }
+
+    .container:hover .quotes1{
+        opacity: 1;
+    }
+
+    .container:hover .quotes2{
+        opacity: 1;
+    }
+
+
+   
+    
+    .citation{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width:90vw;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .citation p{
+        
+        font-size: 1.5rem;
+        font-weight:700;
+    }
+    
+    .citation a{
+        color:#005511;
+        text-decoration: none;
+    }
+    .citation a:hover{
+        text-decoration: underline;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+
+        .letter-container {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+        }
+        .letter-container span {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: bold;
+            color:#005511;
+            left: calc(var(--x) * 1%);
+            transform: rotate(calc(var(--r) * 1deg));
+            opacity: calc(var(--o));
+            animation: fall linear infinite;
+            animation-duration: calc(var(--speed) * 1s);
+            top: -30px; /* Start above the screen */
+        }
+        .description{
+            width:50vw;
+            margin-left:10vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 2rem;
+            font-weight:300;
+        }
+        .question{
+            width:70vw;
+           margin-left:20vw;
+           margin-bottom: 30vh;
+        }
+    
+        .question h1{
+            font-size: 2.5rem;
+            font-weight:700;
+            line-height: 1.1em;
+            text-align: right;
+        }
+
+        .injar{
+            width:40vw;
+            border-right: 2px solid #005511; 
+            height:30vh;
+        }
+    
+        .injar, .outjar {
+            width: 40vw;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers items horizontally */
+            justify-content: center; /* Centers items vertically */
+            text-align: center; /* Ensures text inside is centered */
+        }
+    
+        .display, .hidden {
+        width: 80%; /* Adjust width as needed */
+        max-width: 30vw; /* Ensures it doesn't stretch too much */
+    }
+    
+        .display{
+            font-size: 1.5rem;
+        }
+    
+        .hidden{
+            font-size:0.5rem;
+            opacity:0;
+        }
+    
+        .injar:hover .display {
+            font-size: 0.9rem;
+            line-height: 1.7rem;
+        }
+        
+        .injar:hover .hidden {
+            font-size: 1.2rem;
+            opacity: 1;
+        }
+        
+        .outjar:hover .display {
+            font-size: 0.9rem;
+            line-height: 1.7rem;
+        }
+        
+        .outjar:hover .hidden {
+            font-size: 1.2rem;
+            opacity: 1;
+        }
+        
+    
+        .container{
+            margin:auto;
+            display:flex;
+            justify-content: center;
+        }
+    
+        .other{
+            margin-top: 100px;
+            width:45vw;
+            align-self: center;
+        }
+        
+        .other p{
+            font-size: 2rem;
+            font-weight:100;
+            text-align: center;
+        }
+    
+        .quotes1 {
+            opacity: 0;
+            display:hidden;
+            font-family:cursive;
+            align-self: flex-start;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+    
+        .quotes2 {
+            opacity: 0;
+            font-family:cursive;
+            align-self: flex-start;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .reflection{
+            width:60vw;
+            margin-left:10vw;
+            margin-top:30vh;
+            margin-bottom:20vh;
+    
+        }
+    
+        .reflection h1{
+            font-size: 2rem;
+            font-weight:200;
+            line-height: 1.1em;
+        
+        }
+        
+    }
+    
+    @media screen and (max-width: 768px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        @keyframes description {
+            0%, 100%{
+               font-weight: 300;
+            }
+            50% {
+                font-weight: 900;
+            }
+        }
+    
+
+        @keyframes fluffy {
+            0%, 100%{
+                letter-spacing: normal;
+                font-weight: 300;
+            }
+            50% {
+                letter-spacing: 1.5rem;
+                font-weight: 900;
+            }
+        }
+
+        @keyframes cling {
+            0%, 100%{
+                letter-spacing: normal;
+                font-weight: 300;
+            }
+            50% {
+                letter-spacing: -0.3rem;
+                font-weight: 900;
+            }
+        }
+    
+
+        .description{
+            width:50vw;
+            margin-left:10vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 1.3rem;
+            font-weight:300;
+        
+        }
+        .description p span {
+            animation: description 6s ease-in-out infinite;
+        }
+        .description p .fluffy {
+            animation: fluffy 6s ease-in-out infinite;
+        }
+
+        .description p .cling {
+            animation: cling 6s ease-in-out infinite;
+        }
+        
+
+        .question{
+                width:70vw;
+            margin-left:20vw;
+            margin-bottom: 45vh;
+            }
+
+            .question h1{
+                font-size: 1.5rem;
+                font-weight:700;
+                line-height: 1.1em;
+                text-align: right;
+            }
+
+            .difference{
+                margin-bottom: 35vh;
+            }
+
+            .injar{
+                width:40vw;
+                border-right: 2px solid #005511; 
+                height:30vh;
+            }
+        
+            .injar, .outjar {
+                width: 40vw;
+                height: 30vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centers items horizontally */
+                justify-content: center; /* Centers items vertically */
+                text-align: center; /* Ensures text inside is centered */
+            }
+        
+            .display, .hidden {
+            width: 80%; /* Adjust width as needed */
+            max-width: 30vw; /* Ensures it doesn't stretch too much */
+        }
+        
+            .display{
+                font-size: 0.7rem;
+            }
+        
+            .hidden{
+                font-size:1.2rem;
+                opacity:1;
+            }
+        
+        
+            
+
+
+
+            @keyframes container {
+                0%, 100%{
+                   opacity:0;
+                }
+                50% {
+                   opacity:1;
+                }
+            }
+            .container{
+                margin:auto;
+                display:flex;
+                justify-content: center;
+                margin-bottom: 35vh;
+            }
+        
+            .other{
+                /* margin-top: 100px; */
+                width:70vw;
+                align-self: center;
+            }
+            
+            .other p{
+                font-size: 1.3rem;
+                font-weight:100;
+                text-align: center;
+            }
+        
+            .quotes1 {
+                opacity: 0;
+                display:hidden;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+        
+            .quotes2 {
+                opacity: 0;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+
+            
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+       
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        
+    }
+    
+    @media screen and (max-width: 480px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        @keyframes description {
+            0%, 100%{
+               font-weight: 300;
+            }
+            50% {
+                font-weight: 900;
+            }
+        }
+
+        @keyframes fluffy {
+            0%, 100%{
+                letter-spacing: normal;
+                font-weight: 300;
+            }
+            50% {
+                letter-spacing: 1.5rem;
+                font-weight: 900;
+            }
+        }
+
+        @keyframes cling {
+            0%, 100%{
+                letter-spacing: normal;
+                font-weight: 300;
+            }
+            50% {
+                letter-spacing: -0.3rem;
+                font-weight: 900;
+            }
+        }
+    
+    
+
+        .description{
+            width:50vw;
+            margin-left:10vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 1.3rem;
+            font-weight:300;
+        }
+
+        .description p span {
+            animation: description 6s ease-in-out infinite;
+        }
+
+        .description p .fluffy {
+            animation: fluffy 6s ease-in-out infinite;
+        }
+
+        .description p .cling {
+            animation: cling 6s ease-in-out infinite;
+        }
+
+        .question{
+                width:70vw;
+            margin-left:20vw;
+            margin-bottom: 40vh;
+            }
+
+            .question h1{
+                font-size: 1.5rem;
+                font-weight:700;
+                line-height: 1.1em;
+                text-align: right;
+            }
+            @keyframes container {
+                0%, 100%{
+                   opacity:0;
+                }
+                50% {
+                   opacity:1;
+                }
+            }
+
+
+            .difference{
+      
+                width:100vw;
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin-bottom:10vh;
+            }
+        
+            .injar{
+                width:75vw;
+                border-right: 0px solid #005511; 
+                border-bottom: 2px solid #005511; 
+                height:auto;
+            }
+        
+            .injar, .outjar {
+                
+                width: 75vw;
+                height: auto;
+                margin:auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centers items horizontally */
+                justify-content: center; /* Centers items vertically */
+                text-align: left; /* Ensures text inside is centered */
+            }
+        
+            .display, .hidden {
+            width: 100%; /* Adjust width as needed */
+            max-width: 75vw; /* Ensures it doesn't stretch too much */
+        }
+        
+            .display{
+                font-size: 0.6rem;
+            }
+        
+            .hidden{
+                font-size:1rem;
+                opacity:1;
+            }
+    
+
+
+            .container{
+                margin:auto;
+                display:flex;
+                justify-content: center;
+                margin-bottom: 35vh;
+            }
+        
+            .other{
+                /* margin-top: 100px; */
+                width:90vw;
+                align-self: center;
+            }
+            
+            .other p{
+                font-size: 1.3rem;
+                font-weight:100;
+                text-align: center;
+            }
+        
+            .quotes1 {
+                opacity: 0;
+                display:hidden;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+        
+            .quotes2 {
+                opacity: 0;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+
+            @keyframes reflection {
+                0%, 100%{
+                    font-weight:200;
+                }
+                50% {
+                    font-weight:700;
+                }
+            }
+
+            .reflection h1 span{ 
+                font-weight:700;
+                animation: reflection 4s ease-in-out infinite;
+            }
+
+            .reflection{
+                width:60vw;
+                margin-left:10vw;
+                margin-top:15vh;
+                margin-bottom:20vh;
+        
+            }
+        
+            .reflection h1{
+                font-size: 1.2rem;
+                font-weight:200;
+                line-height: 1.1em;
+            
+            }
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+    
+        
+    }

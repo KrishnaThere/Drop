@@ -1,0 +1,729 @@
+body{
+    background-color: #30e0ff;
+    font-family: 'Courier New', Courier, monospace;
+    color:#005511;
+    }
+
+    .previous{
+        position: fixed;
+        left: 90px; /* Adjust this value to shift it towards the right */
+    }
+    
+    .previous p {
+        color:#005511;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    
+    .drop-container {
+        text-decoration: none; /* Remove default link styling */
+        color: inherit; /* Keep text color the same */
+        display: inline-block;
+    }
+    
+    .drop {
+        width: 50px;
+        position: fixed;
+        top: 4vh;
+        right: 2vw;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 0.9em;
+        cursor: pointer;
+    }
+    
+    .default span {
+        display: block;
+        text-align: center;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    
+    .default span:first-child {
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .default span:nth-child(2) {
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .default span:nth-child(3) {
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .default span:nth-child(4) {
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    .hover span {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .hover span:first-child {
+        text-align: left;
+        font-weight: normal;
+        font-size: 0.9em;
+    }
+    .hover span:nth-child(2) {
+        text-align: right;
+        font-weight:bold;
+        font-size: 1em;
+    }
+    .hover span:nth-child(3) {
+        text-align: left;
+        font-weight:bolder;
+        font-size: 1.1em;
+    }
+    .hover span:nth-child(4) {
+        text-align: right;
+        font-weight:bolder;
+        font-size: 1.2em;
+    }
+    
+    
+    .drop-container:hover .default span {
+        opacity: 0;
+    }
+    .drop-container:hover .hover span {
+        opacity: 1;
+    }
+
+
+    .letter-container {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+    }
+    .letter-container span {
+        position: absolute;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color:#005511;
+        left: calc(var(--x) * 1%);
+        transform: rotate(calc(var(--r) * 1deg));
+        opacity: calc(var(--o));
+        animation: fall linear infinite;
+        animation-duration: calc(var(--speed) * 1s);
+        top: -30px; /* Start above the screen */
+    }
+
+    @keyframes fall {
+        from {
+            transform: translateY(0) rotate(calc(var(--r) * 1deg));
+        }
+        to {
+            transform: translateY(100vh) rotate(calc(var(--r) * 1deg));
+        }
+    }
+
+    /* Random positioning & animation speed using nth-child */
+    .letter-container span:nth-child(1) { --x: 2; --r: -10; --o: 0.8; --speed: 6; }
+    .letter-container span:nth-child(2) { --x: 8; --r: 5; --o: 0.6; --speed: 5; }
+    .letter-container span:nth-child(3) { --x: 14; --r: -5; --o: 0.9; --speed: 7; }
+    .letter-container span:nth-child(4) { --x: 22; --r: 12; --o: 0.7; --speed: 4; }
+    .letter-container span:nth-child(5) { --x: 30; --r: -8; --o: 1; --speed: 6; }
+    .letter-container span:nth-child(6) { --x: 38; --r: 6; --o: 0.5; --speed: 5; }
+    .letter-container span:nth-child(7) { --x: 45; --r: -12; --o: 0.8; --speed: 7; }
+    .letter-container span:nth-child(8) { --x: 52; --r: 4; --o: 0.9; --speed: 6; }
+    .letter-container span:nth-child(9) { --x: 60; --r: -7; --o: 0.6; --speed: 5; }
+    .letter-container span:nth-child(10) { --x: 68; --r: 15; --o: 0.7; --speed: 8; }
+    .letter-container span:nth-child(11) { --x: 75; --r: -9; --o: 1; --speed: 6; }
+    .letter-container span:nth-child(12) { --x: 82; --r: 8; --o: 0.5; --speed: 5; }
+    .letter-container span:nth-child(13) { --x: 90; --r: -6; --o: 0.8; --speed: 7; }
+    .letter-container span:nth-child(14) { --x: 96; --r: 3; --o: 0.7; --speed: 6; }
+
+
+    
+    .description{
+        width:50vw;
+        margin-left:25vw;
+        margin-top:20vh;
+        margin-bottom:20vh;
+    }
+
+    .description p{
+        font-size: 2.5rem;
+        font-weight:300;
+    }
+
+    .description:hover ~ .question{
+        opacity: 0;
+    }
+
+    .description:hover ~ .other{
+        opacity: 0;
+    }
+
+    .description:hover ~ .letter-container{
+        opacity: 100;
+    }
+
+    .description p:hover{
+        font-weight: bolder;
+    }
+
+    .question{
+        width:50vw;
+       margin-top:35vh;
+       margin-bottom:20vh;
+       margin:auto;
+      
+    }
+
+    body:has(.question:hover) {
+        background-color: #005511;
+    }
+    
+    .question:hover{
+       color: #30e0ff;
+     }
+     
+    
+    .question h1{
+        font-size: 3rem;
+        font-weight:700;
+        line-height: 1.1em;
+        text-align: center;
+    }
+
+    .container{
+        margin:auto;
+        display:flex;
+        justify-content: center;
+    }
+
+    .other{
+        margin-top: 100px;
+        width:45vw;
+        align-self: center;
+    }
+    
+    .other p{
+        font-size: 2.5rem;
+        font-weight:100;
+        text-align: center;
+    }
+
+    .quotes1 {
+        opacity: 0;
+        display:hidden;
+        font-family:cursive;
+        align-self: flex-start;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    .quotes1 span{
+        opacity:0;
+    }
+
+    .quotes2 span{
+        opacity:0;
+    }
+
+    .quotes2 {
+        opacity: 0;
+        font-family:cursive;
+        align-self: flex-start;
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+
+    .container:hover ~ .question{
+        opacity: 0;
+    }
+
+    .container:hover ~ .reflection{
+        opacity: 0;
+    }
+
+    .container:hover .quotes1{
+        opacity: 1;
+    }
+
+    .container:hover .quotes2{
+        opacity: 1;
+    }
+
+    .reflection{
+        width:60vw;
+        margin-left:10vw;
+        margin-top:30vh;
+        margin-bottom:35vh;
+
+    }
+
+    .reflection h1{
+        font-size: 2.5rem;
+        font-weight:200;
+        line-height: 1.1em;
+    
+    }
+
+    .reflection:hover h1 span{ 
+        font-weight:700;
+    }
+    .reflection:hover ~ .question{
+        opacity: 0;
+    }
+   
+    
+    .citation{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width:90vw;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .citation p{
+        
+        font-size: 1.5rem;
+        font-weight:700;
+    }
+    
+    .citation a{
+        color:#005511;
+        text-decoration: none;
+    }
+    .citation a:hover{
+        text-decoration: underline;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+
+        .letter-container {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+        }
+        .letter-container span {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: bold;
+            color:#005511;
+            left: calc(var(--x) * 1%);
+            transform: rotate(calc(var(--r) * 1deg));
+            opacity: calc(var(--o));
+            animation: fall linear infinite;
+            animation-duration: calc(var(--speed) * 1s);
+            top: -30px; /* Start above the screen */
+        }
+        .description{
+            width:50vw;
+            margin-left:30vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 2rem;
+            font-weight:300;
+        }
+        .question{
+            width:70vw;
+           margin-left:20vw;
+           margin-bottom: 10vh;
+        }
+    
+        .question h1{
+            font-size: 2.5rem;
+            font-weight:700;
+            line-height: 1.1em;
+            text-align: right;
+        }
+    
+        .container{
+            margin:auto;
+            display:flex;
+            justify-content: center;
+        }
+    
+        .other{
+            margin-top: 100px;
+            width:45vw;
+            align-self: center;
+        }
+        
+        .other p{
+            font-size: 2rem;
+            font-weight:100;
+            text-align: center;
+        }
+    
+        .quotes1 {
+            opacity: 0;
+            display:hidden;
+            font-family:cursive;
+            align-self: flex-start;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+    
+        .quotes2 {
+            opacity: 0;
+            font-family:cursive;
+            align-self: flex-start;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .reflection{
+            width:60vw;
+            margin-left:10vw;
+            margin-top:30vh;
+            margin-bottom:20vh;
+    
+        }
+    
+        .reflection h1{
+            font-size: 2rem;
+            font-weight:200;
+            line-height: 1.1em;
+        
+        }
+        
+    }
+    
+    @media screen and (max-width: 768px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        @keyframes description {
+            0%, 100%{
+               font-weight: 300;
+            }
+            50% {
+                font-weight: bolder;
+            }
+        }
+    
+    
+
+        .description{
+            width:50vw;
+            margin-left:30vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 1.3rem;
+            font-weight:300;
+            transition:6s ease-in-out;
+            animation: description 6s ease-in-out infinite;
+        }
+
+
+        .question{
+                width:70vw;
+            margin-left:20vw;
+            margin-bottom: 10vh;
+            }
+
+            .question h1{
+                font-size: 1.5rem;
+                font-weight:700;
+                line-height: 1.1em;
+                text-align: right;
+            }
+            @keyframes container {
+                0%, 100%{
+                   opacity:0;
+                }
+                50% {
+                   opacity:1;
+                }
+            }
+            .container{
+                margin:auto;
+                display:flex;
+                justify-content: center;
+            }
+        
+            .other{
+                /* margin-top: 100px; */
+                width:70vw;
+                align-self: center;
+            }
+            
+            .other p{
+                font-size: 1.3rem;
+                font-weight:100;
+                text-align: center;
+            }
+        
+            .quotes1 {
+                opacity: 0;
+                display:hidden;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+        
+            .quotes2 {
+                opacity: 0;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+
+            @keyframes reflection {
+                0%, 100%{
+                    font-weight:200;
+                }
+                50% {
+                    font-weight:700;
+                }
+            }
+
+            .reflection h1 span{ 
+                font-weight:700;
+                animation: reflection 4s ease-in-out infinite;
+            }
+
+            .reflection{
+                width:60vw;
+                margin-left:10vw;
+                margin-top:15vh;
+                margin-bottom:20vh;
+        
+            }
+        
+            .reflection h1{
+                font-size: 1.2rem;
+                font-weight:200;
+                line-height: 1.1em;
+            
+            }
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+       
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        
+    }
+    
+    @media screen and (max-width: 480px) {
+        .drop {
+            width: 50px;
+            position: fixed;
+            top: 4vh;
+            right: 2vw;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 0.9em;
+            cursor: pointer;
+        }
+    
+        @keyframes description {
+            0%, 100%{
+               font-weight: 300;
+            }
+            50% {
+                font-weight: bolder;
+            }
+        }
+    
+    
+
+        .description{
+            width:50vw;
+            margin-left:10vw;
+            margin-top:20vh;
+            margin-bottom:20vh;
+        }
+    
+        .description p{
+            font-size: 1.3rem;
+            font-weight:300;
+            transition:6s ease-in-out;
+            animation: description 6s ease-in-out infinite;
+        }
+
+
+        .question{
+                width:70vw;
+            margin-left:20vw;
+            margin-bottom: 10vh;
+            }
+
+            .question h1{
+                font-size: 1.5rem;
+                font-weight:700;
+                line-height: 1.1em;
+                text-align: right;
+            }
+            @keyframes container {
+                0%, 100%{
+                   opacity:0;
+                }
+                50% {
+                   opacity:1;
+                }
+            }
+            .container{
+                margin:auto;
+                display:flex;
+                justify-content: center;
+            }
+        
+            .other{
+                /* margin-top: 100px; */
+                width:90vw;
+                align-self: center;
+            }
+            
+            .other p{
+                font-size: 1.3rem;
+                font-weight:100;
+                text-align: center;
+            }
+        
+            .quotes1 {
+                opacity: 0;
+                display:hidden;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+        
+            .quotes2 {
+                opacity: 0;
+                font-family:cursive;
+                align-self: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                animation: container 5s ease-in-out infinite;
+            }
+
+            @keyframes reflection {
+                0%, 100%{
+                    font-weight:200;
+                }
+                50% {
+                    font-weight:700;
+                }
+            }
+
+            .reflection h1 span{ 
+                font-weight:700;
+                animation: reflection 4s ease-in-out infinite;
+            }
+
+            .reflection{
+                width:60vw;
+                margin-left:10vw;
+                margin-top:15vh;
+                margin-bottom:20vh;
+        
+            }
+        
+            .reflection h1{
+                font-size: 1.2rem;
+                font-weight:200;
+                line-height: 1.1em;
+            
+            }
+    
+        .citation p{
+        
+            font-size: 1.3rem;
+            font-weight:20;
+        }
+        
+        .previous{
+            position: fixed;
+            left: 40px; /* Adjust this value to shift it towards the right */
+        }
+        
+        .previous p {
+         
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+    
+        
+    }
